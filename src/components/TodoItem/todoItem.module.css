@@ -1,0 +1,23 @@
+.item{
+  width: 50%;
+  padding: 0;
+  margin: 10px auto;
+  /* display: inline-block; */
+  text-align: left;
+}
+.title{
+  display: inline-block;
+  font-size: 25px;
+  color: black;
+}
+.title:hover{
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  float: right;
+}
+.completed{
+  text-decoration: line-through;
+  color: red;
+}
