@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Header from './components/Header/Header';
 import Input from './components/inputTodo/inputTodo';
 import TodoList from './components/TodoList/todoList';
+import Sidebar from './components/Routing/routing';
 import g from'./App.module.css';
 
 import { createTodo } from './utils/create';
@@ -14,6 +15,28 @@ class App extends Component {
       inputValue: '',
       todos: [],
     };
+
+
+    // add() {
+    //   var title = this.refs.title.value;
+    //   if (localStorage.getItem('todos') == null) {
+    //     var todos = [];
+    //     todos.push(title);
+    //     localStorage.setItem('todos', JSON.stringify(todos));
+    //   } else {
+    //     var todos = JSON.parse(localStorage.getItem('todos'));
+    //     todos.push(title);
+    //     localStorage.setItem('todos', JSON.stringify(works));
+    //   }
+    //   this.setState({
+    //     todos: JSON.parse(localStorage.getItem('todos'))
+    //   })
+    // }
+
+
+
+
+
     this.onChangeInputText = this.onChangeInputText.bind(this);
     this.hendleAddTodo = this.hendleAddTodo.bind(this);
     this.hendleTodoClick = this.hendleTodoClick.bind(this);
@@ -36,6 +59,23 @@ class App extends Component {
       todos: [todo].concat(this.state.todos),
     });
     
+    // add() => {
+    //   var title = this.refs.title.value;
+    //   if (localStorage.getItem('todos') == null) {
+    //     var todos = [];
+    //     todos.push(title);
+    //     localStorage.setItem('todos', JSON.stringify(todos));
+    //   } else {
+    //     var todos = JSON.parse(localStorage.getItem('todos'));
+    //     todos.push(title);
+    //     localStorage.setItem('todos', JSON.stringify(todos));
+    //   }
+    //   this.setState({
+    //     todos: JSON.parse(localStorage.getItem('todos'))
+    //   })
+    // }
+
+
   }
   hendleTodoClick(evt, id) {
     const currentTodoIndex = this.state.todos.findIndex(i => i.id === id);
@@ -62,6 +102,7 @@ class App extends Component {
     return (
       <div className={g.app}>
         <Header />
+        <Sidebar />
         <Input 
           value={this.state.inputValue}
           onChangeText={this.onChangeInputText}
